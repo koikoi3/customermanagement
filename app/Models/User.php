@@ -3,15 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
+    use Notifiable;
+    //use HasFactory;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +42,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+    
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class);
+    }
+    
+    public function customers()
+    {
+        return $this->hasMany(CustomerLog::class);
+    }
+    
+    public function isSuperVisor(): bool
+    {
+        return $this['role_id'] === 1;
+    }
+    
+    public static function enumSuperVisor()
+    {
+        return User::where('role_id', '=', 1)->get();
+    }
 }
