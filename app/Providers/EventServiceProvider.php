@@ -18,8 +18,8 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        \App\Events\KrameInComming::class => [
-            \App\Listeners\SendKrameInCommingNotification::class
+        \App\Events\KramerInComming::class => [
+            \App\Listeners\SendKramerInCommingNotification::class
         ],
     ];
 

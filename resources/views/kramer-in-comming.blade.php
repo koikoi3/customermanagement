@@ -1,7 +1,7 @@
 @component('mail::message')
-# Introduction
+# 新着情報
 
-クレーマーがきました。
+クレーマーが登録されました。
 {{ $kramer->name }}様
 
 @component('mail::button', ['url' => ''])

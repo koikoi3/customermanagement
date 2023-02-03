@@ -20,8 +20,9 @@
                 <div class="card">
                     <form action="/customers/{{$customer->id}}/logs" method="POST">
                         @csrf
-                        Log: <input type="text" name="log" value="{{old('log')}}">
-                        <button type="submit" class="btn btn-sm btn-outline-primary">投稿</button>
+                        <p>記録：</p> 
+                        <textarea name="log" value="{{old('log')}}"></textarea>
+                        <br><button type="submit" class="btn btn-sm btn-outline-primary">投稿</button>
                     </form>
 
                 </div>

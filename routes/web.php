@@ -42,8 +42,13 @@ Route::get('customer_search', [\App\Http\Controllers\CustomerSearchController::c
 
 Route::post('customer_search', [\App\Http\Controllers\CustomerSearchController::class, 'search'])->middleware('auth');
 
+//Route::get('/customers/{customer}/logs', \App\Http\Controllers\CustomerLogController::class)->middleware('auth');
+
 Route::post('/customers/{customer}/logs', \App\Http\Controllers\CustomerLogController::class)->middleware('auth');
 
+//Route::post('/customers/{customer}/logs', \App\Customer::class)->middleware('auth');
+
+//Route::post('/customers/{customer}/logs', 'CustomerLogController')->middleware('auth');
 //Route::get('login', [\App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 
 //Route::post('login', [\App\Http\Controllers\Auth\LoginController::class, 'login']);
@@ -54,6 +59,6 @@ Route::post('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logou
 //Route::get('customer_search', [\App\Http\Controllers\CustomerSearchController::class, 'myapplicationservice'])->middleware('auth');
 
 //Route::post('customer_search', [\App\Http\Controllers\CustomerSearchController::class, 'myapplicationservice'])->middleware('auth');
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

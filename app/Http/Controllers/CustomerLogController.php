@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
+use App\Http\Controllers\CustomerController;
 use App\CustomerLog;
 use Illuminate\Http\Request;
 
@@ -15,6 +15,7 @@ class CustomerLogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Customer $customer)
+    //public function __invoke(Request $request)
     {
         $attribute = $this->validateLog();
         $attribute['customer_id'] = $customer['id']; // カスタマーIDを記録

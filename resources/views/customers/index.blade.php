@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">顧客</div>
+                    <div class="card-header">顧客一覧</div>
                     <table width="100%" border="1">
                         <thead>
                         <tr style="background-color: lightgray">

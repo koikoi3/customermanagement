@@ -44,13 +44,14 @@ class CustomerController extends Controller
         $attribute = request()->validate([
         'name' => ['required', 'min:3', 'max:32'],
             'shop_id' => ['required', 'Numeric', 'Between:1,3'],
-            'postal' => ['required',],
+            'postal' => ['required', 'digits:7'],
             'address' => ['required',],
-            'email' => ['required', 'E-Mail'],
+            'email' => ['required', 'email'],
             'birthdate' => ['required', 'Date'],
-            'phone' => ['required',],
+            'phone' => ['required', 'digits_between:10,11'],
             'kramer_flag' => ['required', 'Numeric', 'Between:0,1'],
         ]);
+            
         $customer = Customer::create($attribute);
         return redirect('/customers');
     }

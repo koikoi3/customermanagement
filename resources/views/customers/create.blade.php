@@ -7,27 +7,51 @@
                     <div class="card-header">顧客新規登録</div>
                     <form action="/customers" method="POST">
                         @csrf
-                        <p>氏名：<input type="text" name="name" value="{{ old('name') }}"></p>
-                        <p>店舗番号：<input type="text" name="shop_id" value="{{ old('shop') }}"></p>
+                        <p>氏名：</p>
+                        <input type="text" name="name" value="{{ old('name') }}" required>
+                        @if ($errors->first('name'))
+                            <p class="validation">*{{$errors->first('name')}}</p>
+                        @endif
+                        <p>店舗番号：</p>
+                        <input type="text" pattern="[1-3]" name="shop_id" value="{{ old('shop_id') }}" required>
+                        @if ($errors->first('shop_id'))
+                            <p class="validation">*{{$errors->first('shop_id')}}</p>
+                        @endif
                         <p style="font-size: 0.75em">1 東京本店, 2 名古屋支店, 3 大阪支店</p>
-                        <p>郵便番号：<input type="text" name="postal" value="{{ old('postal') }}"></p>
-                        <p>住所：<input type="text" name="address" value="{{ old('address') }}"></p>
-                        <p>メール：<input type="text" name="email" value="{{ old('email') }}"></p>
-                        <p>生年月日：<input type="text" name="birthdate" value="{{ old('birthdate') }}"></p>
-                        <p>電話番号：<input type="text" name="phone" value="{{ old('phone') }}"></p>
-                        <p>クレーマーフラグ：<input type="text" name="kramer_flag" value="{{ old('kramer_flag') }}"></p>
+                        <p>郵便番号：</p>
+                        <input type="text" placeholder="半角数字７文字"　name="postal" value="{{ old('postal') }}" required>
+                        @if ($errors->first('postal'))
+                            <p class="validation">*{{$errors->first('postal')}}</p>
+                        @endif
+                        <p>住所：</p>
+                        <input type="text" name="address" value="{{ old('address') }}" required>
+                        @if ($errors->first('address'))
+                            <p class="validation">*{{$errors->first('address')}}</p>
+                        @endif
+                        <p>メール：</p>
+                        <input type="email" name="email" value="{{ old('email') }}" required>
+                        @if ($errors->first('email'))
+                            <p class="validation">*{{$errors->first('email')}}</p>
+                        @endif
+                        <p>生年月日：</p>
+                        <input type="date" name="birthdate" value="{{ old('birthdate') }}" required>
+                        @if ($errors->first('birthdate'))
+                            <p class="validation">*{{$errors->first('birthdate')}}</p>
+                        @endif
+                        <p>電話番号：</p>
+                        <input type="text" name="phone" pattern="[0-9]{10,11}" value="{{ old('phone') }}" required>
+                        @if ($errors->first('phone'))
+                            <p class="validation">*{{$errors->first('phone')}}</p>
+                        @endif
+                        <p>クレーマーフラグ：</p>
+                        <input type="text" pattern="[0-1]" name="kramer_flag" value="{{ old('kramer_flag') }}" required>
+                        @if ($errors->first('kramer_flag'))
+                            <p class="validation">*{{$errors->first('kramer_flag')}}</p>
+                        @endif
                         <p style="font-size: 0.75em">0 問題ない顧客, 1 クレーマー顧客</p>
                         <p style="text-align: center"><button class="btn btn-primary" type="submit">　　登　録　　</button></p>
                     </form>
                     
-                    {{-- エラーを表示--}}
-                    @if( $errors->any() )
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>{{$error}}</li>
-                            @endforeach
-                        </ul>
-                    @endif
 
                 </div>
             </div>

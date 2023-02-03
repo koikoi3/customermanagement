@@ -21,7 +21,7 @@ class CreateCustomersTable extends Migration
             $table->string('address');
             $table->string('email');
             $table->date('birthdate');
-            $table->string('phone');
+            $table->unsignedBigInteger('phone')->after('address');
             $table->boolean('kramer_flag')->default(false)->comment('クレーマーフラグ');
             $table->timestamps();
         });

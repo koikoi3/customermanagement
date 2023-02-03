@@ -158,6 +158,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '氏名',
+        ],
 
 ];
