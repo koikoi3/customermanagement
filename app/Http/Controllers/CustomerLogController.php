@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\CustomerController;
-use App\CustomerLog;
+use App\Models\Customer;
+use App\Models\CustomerLog;
 use Illuminate\Http\Request;
 
 class CustomerLogController extends Controller

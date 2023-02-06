@@ -20,9 +20,9 @@
                 <div class="card">
                     <form action="/customers/{{$customer->id}}/logs" method="POST">
                         @csrf
-                        <p>記録：</p> 
+                        <p>対応記録：</p> 
                         <textarea name="log" value="{{old('log')}}"></textarea>
-                        <br><button type="submit" class="btn btn-sm btn-outline-primary">投稿</button>
+                        <br><button type="submit" class="btn btn-sm btn-outline-primary">登録</button>
                     </form>
 
                 </div>

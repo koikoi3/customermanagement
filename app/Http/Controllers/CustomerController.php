@@ -46,7 +46,7 @@ class CustomerController extends Controller
             'shop_id' => ['required', 'Numeric', 'Between:1,3'],
             'postal' => ['required', 'digits:7'],
             'address' => ['required',],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'E-Mail'],
             'birthdate' => ['required', 'Date'],
             'phone' => ['required', 'digits_between:10,11'],
             'kramer_flag' => ['required', 'Numeric', 'Between:0,1'],

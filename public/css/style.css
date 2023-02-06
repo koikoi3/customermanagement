@@ -3,7 +3,7 @@ body{
 }
 p {
   width: 400px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 .validation {
   display: inline;
@@ -13,16 +13,25 @@ p {
 }
 input[type=date] {
   width: 400px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 input[type=number] {
-  width: 70px;
+  width: 185px;
   margin-bottom: 1.5rem;
   margin: 0.2rem;
 }
 input[type=text] {
+  margin: 0.1rem;
   width: 400px;
 }
 input[type=email] {
+  margin: 0.1rem;
   width: 400px;
+}
+.btn-primary {
+  transform: translateX(120%);
+  margin: 0.2rem;
+}
+.btn-link {
+  margin-left: 200px;
 }
